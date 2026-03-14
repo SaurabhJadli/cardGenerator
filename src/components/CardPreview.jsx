@@ -1,8 +1,6 @@
 import MinimalImageTemplate from './templates/MinimalImageTemplate'
 
 const CardPreview = ({data, accentColor, classes=''}) => {
-
-
   return (
     <div className='w-full bg-gray-100 flex text-center items-center justify-center rounded'>
         <div id='idCard-preview' className={'border border-gray-200 print:shadow-none print:border-none rounded' + classes}
@@ -21,7 +19,6 @@ const CardPreview = ({data, accentColor, classes=''}) => {
         }
 
         @media print {
-
           body * {
             visibility: hidden;
           }

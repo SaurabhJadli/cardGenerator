@@ -4,9 +4,8 @@ import { ArrowLeftIcon, DownloadIcon } from 'lucide-react'
 import PersonalInfoForm from '../components/PersonalInfoForm'
 import CardPreview from '../components/CardPreview'
 
-
 const CardGen = () => {
-  const [resumeData, setResumeData] = useState({
+  const [IDData, setIDData] = useState({
     _id: '',
     title: '',
     personal_info: {},
@@ -15,10 +14,7 @@ const CardGen = () => {
     public: false,
   })
 
-
-  
-
-  const downloadResume = () => {
+  const downloadID = () => {
     window.print();
   }
 
@@ -38,7 +34,7 @@ const CardGen = () => {
 
               {/* Form Content */}
               <div className='space-y-6'> 
-                  <PersonalInfoForm data={resumeData.personal_info} onChange={(data) => setResumeData(prev => ({ ...prev, personal_info: data }))}  />
+                  <PersonalInfoForm data={IDData.personal_info} onChange={(data) => setIDData(prev => ({ ...prev, personal_info: data }))}  />
               </div>
             </div>
           </div>
@@ -48,12 +44,13 @@ const CardGen = () => {
             <div className='relative w-full'>
               <div className='absolute bottom-3 left-0 right-0 flex items-center justify-end gap-2'>
 
-                <button onClick={downloadResume} className='w-full text-center justify-center flex items-center gap-2 px-6 py-2 text-xs bg-gradient-to-br from-green-100 to-green-200 text-green-600 rounded-lg ring-green-300 hover:ring transition-colors'>
+          {/* Download id button */}
+                <button onClick={downloadID} className='w-full text-center justify-center flex items-center gap-2 px-6 py-2 text-xs bg-gradient-to-br from-green-100 to-green-200 text-green-600 rounded-lg ring-green-300 hover:ring transition-colors'>
                   <DownloadIcon className='size-4' /> Download ID card
                 </button>
               </div>
             </div>
-            <CardPreview data={resumeData} accentColor={resumeData.accent_color} />
+            <CardPreview data={IDData} accentColor={IDData.accent_color} />
           </div>
 
         </div>

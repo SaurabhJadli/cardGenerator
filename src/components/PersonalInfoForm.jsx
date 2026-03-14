@@ -9,18 +9,16 @@ const PersonalInfoForm = ({data, onChange}) => {
     const fields = [
         {key: 'full_name', label: 'Full Name', icon: User, type: 'text', required: true},
         {key: 'course', label: 'Course', icon: GraduationCap, type: 'text', required: true},
-        {key: 'phone', label: 'Phone Number', icon: Phone, type: 'tel'},
+        {key: 'phone', label: 'Phone Number', icon: Phone, type: 'tel', required: true},
         {key: 'email', label: 'Email Address', icon: Mail, type: 'email', required: true},
-        {key: 'DOB', label: 'DOB', icon: Cake, type: 'date'},
-        {key: 'roll_no', label: 'Roll no', icon: IdCardLanyard, type: 'number'},
-        {key: 'address', label: 'Address', icon: MapPin, type: 'text'},
-
+        {key: 'DOB', label: 'DOB', icon: Cake, type: 'date', required: true},
+        {key: 'roll_no', label: 'Roll no', icon: IdCardLanyard, type: 'number', required: true},
+        {key: 'address', label: 'Address', icon: MapPin, type: 'text', required: true},
     ]
 
   return (
     <div>
       <h3 className='text-lg font-semibold text-gray-900'>Personal Information</h3>
-      <p className='text-sm text-gray-600'>Get Started with the personal information</p>
       <div className='flex items-center gap-2'>
         <label>
             {data.image ? (
@@ -32,8 +30,7 @@ const PersonalInfoForm = ({data, onChange}) => {
                 </div>
             )}
             <input type="file" accept='image/jpeg, image/png' className='hidden' onChange={(e)=>handleChange('image', e.target.files[0])}/>
-        </label>
-        
+        </label>  
       </div>
 
       {fields.map((field)=>{
