@@ -8,7 +8,6 @@ const App = () => {
     <>
       <Routes>
         <Route path='/' element={<Dashboard />} />
-
         <Route path='/app' element={<Layout />}>
           <Route path='idgen' element={<CardGen />} />
         </Route>
