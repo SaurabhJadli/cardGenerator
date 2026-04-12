@@ -2,17 +2,18 @@ import { Mail, Phone, MapPin, Cake, IdCardLanyard } from "lucide-react";
 
 const MinimalImageTemplate = ({ data, accentColor }) => {
     return (
-        // Company LOGO
         <div className="max-w-5xl mx-auto bg-white text-zinc-800">
+
+            {/* // Company LOGO */}
             <div className="bg-sky-400 h-14 p-3 card-head-border mb-1">
-<img src="/favicon.svg" alt="sas icon" className="mx-auto" />
+                <img src="/favicon.svg" alt="sas icon" className="mx-auto" />
             </div>
             <div className="text-center">
                 <div className="pb-5">
                     {/* Image */}
                     {data.personal_info?.image && typeof data.personal_info.image === 'string' ? (
                         <div>
-                            <img src={data.personal_info.image} alt="Profile" className="w-32 h-32 object-cover rounded-full mx-auto" style={{ background: accentColor+'70' }} />
+                            <img src={data.personal_info.image} alt="Profile" className="w-32 h-32 object-cover rounded-full mx-auto" style={{ background: accentColor + '70' }} />
                         </div>
                     ) : (
                         data.personal_info?.image && typeof data.personal_info.image === 'object' ? (
@@ -36,7 +37,7 @@ const MinimalImageTemplate = ({ data, accentColor }) => {
 
 
                     {/* Contacts */}
-                    <section className="mb-8 flex"> 
+                    <section className="mb-8 flex">
                         <div className="space-y-2 text-sm items-center justify-center mx-auto">
                             {data.personal_info?.phone && (
                                 <div className="flex items-center gap-2">
@@ -52,8 +53,8 @@ const MinimalImageTemplate = ({ data, accentColor }) => {
                                     <span>{data.personal_info.email}</span>
                                 </div>
                             )}
-                            
-                             {/* DOB */}
+
+                            {/* DOB */}
                             {data.personal_info?.DOB && (
                                 <div className="flex items-center gap-2">
                                     <Cake size={14} style={{ color: accentColor }} />
@@ -75,15 +76,15 @@ const MinimalImageTemplate = ({ data, accentColor }) => {
                                     <MapPin size={14} style={{ color: accentColor }} className="mt-1" />
                                     <div>
                                         <span className="font-medium">Address :</span> {data.personal_info.address}
-                                        </div>
-                                        </div>
-                                    )}
                                     </div>
-                                    </section>
-                                    </aside>
-                                    </div>
-                                    </div>
-                                    );
-                                }
+                                </div>
+                            )}
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    );
+}
 
 export default MinimalImageTemplate;
